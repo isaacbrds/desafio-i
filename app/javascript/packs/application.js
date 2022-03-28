@@ -13,3 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap"
+
+require("jquery")
+require("@nathanvda/cocoon")
