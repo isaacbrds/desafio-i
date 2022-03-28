@@ -1,0 +1,27 @@
+pt-BR:
+  activerecord:
+    models:
+      product:
+        one: Produto
+        other: Produtos
+      purchase:
+        one: Entrada
+        other: Entradas
+    attributes:
+      user:
+        name: Nome
+        email: E-mail 
+        password: Senha
+        password_confirmation: Confirme sua senha
+        remember_me: lembrar
+      post:
+        title: Título
+        description: Descrição
+        owner: Dono
+        thumbnail: Imagem
+      purchase:
+        name: Nome
+      product: 
+        name: Produto
+        quantity: Quantidade
+        Search: Buscar

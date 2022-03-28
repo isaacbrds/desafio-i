@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @material.title %></h5>
+      <p class="card-text">Quantity: <%= @material.quantity %></p>
+      <%= link_to t('back'), materials_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
