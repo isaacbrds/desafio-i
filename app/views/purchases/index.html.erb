@@ -1,0 +1,15 @@
+<table class="table">
+  <th><%= t('Purchase Date') %></th>
+  <th><%= t('Client') %></th>
+  <th><%= t('Detail') %></th>
+  <th colspan="3"> <%= link_to "#{t('new')} #{t('Purchase')}", new_purchase_path, 
+    class: 'btn btn-success' %></th> 
+  <% @purchases.each do |purchase| %>
+  <tr>
+    <td><%= purchase.created_at.strftime('%d/%m/%Y') %></td>
+    <td><%= purchase.user.email %></td>
+    <td > <%= link_to t('show'), purchase_path(purchase),
+      class: 'btn btn-info'  %> </td>
+  </tr>
+  <% end %>
+</table>
