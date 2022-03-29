@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :purchase_item do
+  factory :order_item do
     material 
-    purchase
+    order 
     quantity { random.rand * 10 }
   end
 end
