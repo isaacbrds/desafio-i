@@ -8,14 +8,18 @@ pt-BR:
   delete: Deletar 
   My Posts: Minhas Postagens
   My Products: Meus Produtos
-  My Purchase: Minhas Entradas
+  My Purchases: Minhas Entradas
+  My Orders: Minhas Entradas
+  My Materials: Meus Materiais
   Inventory Manager: Gerenciamento de Estoque
   Search: Buscar
   Purchase: Entrada
   Purchase Date: Data de Entrada
+  Order Date: Data de Saida
   Client: Responsável
   Detail: Detalhe
   Product: Produto
+  Order: Saída
   Material: Material
   Name: Nome
   Quantity: Quantidade
