@@ -1,0 +1,18 @@
+<div class="container">
+  <h5>
+    This purchase was made by: <%= @purchase.user.email %>
+  </h5>
+  <div class="row mt-5">
+    <% @purchase.products.each do |product| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <p class="card-text">Quantity: <%= product.quantity %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  
+  <br>
+  <%= link_to t('back'), purchases_path, class: "btn btn-primary" %>
+</div>
