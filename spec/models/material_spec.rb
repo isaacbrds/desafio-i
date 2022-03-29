@@ -7,5 +7,8 @@ RSpec.describe Material, type: :model do
   
   describe "associations" do
     it { is_expected.to have_many(:purchase_items) }
+    it { is_expected.to have_many(:purchases) }
+    it { is_expected.to have_many(:order_items) }
+    it { is_expected.to have_many(:orders) }
   end
 end
