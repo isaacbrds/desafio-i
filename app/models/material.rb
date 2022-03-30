@@ -6,7 +6,7 @@ class Material < ApplicationRecord
   
   paginates_per 10
   
-  scope :for_title, ->(title) { where(["title ILIKE ?", "%#{title}%"]) }
+  scope :for_title, ->(title) { where(["title LIKE ?", "%#{title}%"]) }
   validates :title, presence: true, uniqueness: true
   validates :quantity, numericality: { greater_than_or_equal_to: 0}
 end
