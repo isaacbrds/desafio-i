@@ -1,12 +1,15 @@
 pt-BR:
   activerecord:
     models:
-      product:
-        one: Produto
-        other: Produtos
+      material:
+        one: Material
+        other: Materiais
       purchase:
         one: Entrada
         other: Entradas
+      order:
+        one: Saída
+        other: Saídas
     attributes:
       user:
         name: Nome
@@ -20,8 +23,10 @@ pt-BR:
         owner: Dono
         thumbnail: Imagem
       purchase:
-        name: Nome
-      product: 
-        name: Produto
+        quantity: Quantidade
+      order: 
+        quantity: Quantidade
+      material: 
+        title: Título
         quantity: Quantidade
         Search: Buscar

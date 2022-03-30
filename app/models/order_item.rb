@@ -2,6 +2,7 @@ class OrderItem < ApplicationRecord
   belongs_to :material
   belongs_to :order
   before_save :check_inventory
+  after_save :create_log
 
   def check_inventory
     material = Material.find(material_id)
@@ -22,5 +23,12 @@ class OrderItem < ApplicationRecord
 
   def is_enough?(quantity)
     raise Exception.new "Stored quantity is not enough to make this action" if self.material.quantity < quantity
+  end
+
+  def create_log
+    file_name = "#{Date.today.strftime("%d-%m-%Y")}-log.txt"
+    File.open("log/#{file_name}", 'a') do |f|
+      f.write("Saída feita por #{self.order.user.email} em #{created_at.strftime("%d-%m-%Y às %H:%M:%S")} - Material: #{material.title} - Quantidade: #{quantity} \n")
+    end
   end
 end
