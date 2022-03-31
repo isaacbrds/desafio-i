@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @purchase.user = current_user
     if @purchase.save
-      redirect_to materials_path, notice: 'Purchase was successfully created'
+      redirect_to purchases_path, notice: 'Purchase was successfully created'
     else
       render :new
     end

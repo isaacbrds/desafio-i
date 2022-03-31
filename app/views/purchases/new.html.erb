@@ -19,10 +19,10 @@
       <% end %>
 
       <div class="links">
-        <%= link_to_add_association 'add purchase items', purchase_form, :purchase_items %>
+        <%= link_to_add_association t('add purchase items'), purchase_form, :purchase_items %>
       </div>
     </div>
     <br />
-    <%= purchase_form.submit %>
+    <%= purchase_form.submit t('create'),class: "btn btn-primary" %>
   <% end %>
 </section>

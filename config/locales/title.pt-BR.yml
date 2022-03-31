@@ -6,6 +6,9 @@ pt-BR:
   edit: Editar
   show: Mostrar
   delete: Deletar 
+  User: Usuário
+  leave blank: (Deixe em branco caso não queira alterar)
+  we need your: (Precisamos da sua senha atual para confirmar a mudança)
   My Posts: Minhas Postagens
   My Products: Meus Produtos
   Purchases: Entradas
@@ -13,6 +16,10 @@ pt-BR:
   My Purchases: Minhas Entradas
   My Orders: Minhas Saidas
   My Materials: Meus Materiais
+  add purchase items: Adicionar Material
+  remove purchase item: Remover Material
+  add order items: Adicionar Material
+  remove order item: Remover Material
   Inventory Manager: Gerenciamento de Estoque
   Search: Buscar
   Purchase: Entrada
@@ -27,6 +34,7 @@ pt-BR:
   Quantity: Quantidade
   logout: Deslogar
   thumbnail: Imagem
+  update: Atualizar
   back: Voltar
   at: às
   says: disse
@@ -43,3 +51,4 @@ pt-BR:
   post was not successfully imported!: O post não foi importado com sucesso
   remember_me: lembrar
   send: Enviar
+  create: Criar
