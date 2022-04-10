@@ -1,28 +1,5 @@
 <section class="py-5">
   <h1><%= t('new') %> Purchase</h1>
 
-  <% @purchase.errors.each do |key, value| %>
-  <div class="<%= flash_class('error') %>" role="alert">
-    <%= t("#{key}") %> <%= value %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  <% end %>
-  <%= form_with model: @purchase do |purchase_form| %>
-    
-    <h2>Materials</h2>
-    
-    <div id="purchase_items">
-      <%= purchase_form.fields_for :purchase_items do |purchase_items_form| %>
-        <div class="form-group">
-          <%= render "purchase_item_fields", f: purchase_items_form %>
-        </div>
-      <% end %>
-
-      <div class="links">
-        <%= link_to_add_association t('add purchase items'), purchase_form, :purchase_items %>
-      </div>
-    </div>
-    <br />
-    <%= purchase_form.submit t('create'),class: "btn btn-primary" %>
-  <% end %>
+  <%= render 'form', purchase: @purchase %>
 </section>

@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :set_materials, only: %i[create new]
   def index
     @orders = Order.page(params[:page])
   end
@@ -16,12 +17,10 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
-    begin 
-      @order.save
+    if @order.save
       redirect_to materials_path, notice: 'Order was successfully created'
-    rescue Exception => e
-      flash[:error] = e.message
-      redirect_to orders_path
+    else 
+      render :new
     end
   end
 
@@ -35,5 +34,9 @@ class OrdersController < ApplicationController
     @material = Material.find(params[:order][:order_items_attributes]["0"][:material_id])
     quantity = (params[:order][:order_items_attributes]["0"][:quantity]).to_s
     render :new, flash[:error]= "Quantity is not enough " if @material.quantity.to_s < quantity
+  end
+
+  def set_materials
+    @materials = Material.all
   end
 end

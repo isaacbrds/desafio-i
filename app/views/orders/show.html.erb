@@ -1,18 +1,24 @@
-<div class="container">
+<section class="py-5">
   <h5>
-    This order was made by: <%= @order.user.email %>
+    A saída foi realizada pelo: <%= @order.user.email %> em <%= @order.created_at.strftime("%d-%m-%Y às %H:%M:%S") %>
   </h5>
-  <div class="row mt-5">
-    <% @order.materials.each do |material| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= material.title %></h5>
-        <p class="card-text">Quantity: <%= material.quantity %></p>
+  <div class="row d-flex justify-content-center mt-5 ">
+    <% @order.order_items.each do |order_item| %>
+      <div class="col-md-4">
+        <div class="card text-white bg-success mb-3 " style="max-width: 18rem;">
+          <div class="card-header text-center"><%= order_item.material.title %></div>
+          <div class="card-body">
+            <h3 class="card-title">Saídas: <%= order_item.quantity %></h3>
+            <h6 class="card-title">Quantidade atual em estoque: <%= order_item.material.quantity %></h6>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
-  </div>
-  
-  <br>
+    <% end %>
+
+<br>
+<br>
+</div>
+<div class="col-md-6 mt-5">
   <%= link_to t('back'), orders_path, class: "btn btn-primary" %>
 </div>
+</section>

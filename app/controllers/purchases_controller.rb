@@ -1,12 +1,18 @@
 class PurchasesController < ApplicationController
+  before_action :set_materials, only: %i[create new]
   def index
     @purchases = Purchase.page(params[:page])
   end
 
   def new
-    @materials = Material.all
+    
     @purchase = Purchase.new
     @purchase.purchase_items.build
+
+    respond_to do |format|
+      format.html 
+      format.js
+    end
   end
 
   def show
@@ -27,5 +33,8 @@ class PurchasesController < ApplicationController
 
   def purchase_params
     params.require(:purchase).permit(purchase_items_attributes: [:id, :material_id, :quantity, :purchase_id, :_destroy])
+  end
+  def set_materials
+    @materials = Material.all
   end
 end

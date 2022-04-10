@@ -1,18 +1,24 @@
-<div class="container">
+<section class="py-5">
   <h5>
-    This purchase was made by: <%= @purchase.user.email %>
+    A entrada foi realizada por: <%= @purchase.user.email %> em <%= @purchase.created_at.strftime("%d-%m-%Y às %H:%M:%S") %>
   </h5>
-  <div class="row mt-5">
-    <% @purchase.materials.each do |material| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= material.title %></h5>
-        <p class="card-text">Quantity: <%= material.quantity %></p>
+  <div class="row d-flex justify-content-center mt-5 ">
+    <% @purchase.purchase_items.each do |purchase_item| %>
+      <div class="col-md-4">
+        <div class="card text-white bg-success mb-3 " style="max-width: 18rem;">
+          <div class="card-header text-center"><%= purchase_item.material.title %></div>
+          <div class="card-body">
+            <h3 class="card-title">Entrada: <%= purchase_item.quantity %></h3>
+            <h6 class="card-title">Quantidade atual em estoque: <%= purchase_item.material.quantity %></h6>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
-  </div>
-  
-  <br>
+    <% end %>
+
+<br>
+<br>
+</div>
+<div class="col-md-6 mt-5">
   <%= link_to t('back'), purchases_path, class: "btn btn-primary" %>
 </div>
+</section>

@@ -1,0 +1,5 @@
+pt-BR:
+  order_item:
+    weekend: Não é dia útil
+    enough_quantity: Quantidade em estoque não é suficiente
+    business_hour: Não está em horário de expediente

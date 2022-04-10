@@ -1,9 +1,13 @@
-<div class="container">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= @material.title %></h5>
-      <p class="card-text">Quantity: <%= @material.quantity %></p>
-      <%= link_to t('back'), materials_path, class: "btn btn-primary" %>
+<div class="row d-flex justify-content-center mt-5 ">
+  <div class="col-md-6">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= @material.title %></h5>
+        <p class="card-text">Quantity: <%= @material.quantity %></p>
+      </div>
     </div>
+  </div>
+  <div class="col-3-md">
+    <%= link_to t('back'), materials_path, class: "btn btn-primary" %>
   </div>
 </div>

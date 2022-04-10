@@ -4,9 +4,11 @@ class PurchaseItem < ApplicationRecord
   before_save :check_inventory
   after_save :create_log
   
+  validates :quantity, numericality: { greater_than_or_equal_to: 0}
+
   def check_inventory
     material = Material.find(material_id)
-    material.quantity += quantity
+    material.quantity += quantity 
     material.save!
   end
 

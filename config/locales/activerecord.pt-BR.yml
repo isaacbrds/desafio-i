@@ -1,5 +1,16 @@
 pt-BR:
   activerecord:
+    errors:
+      models: 
+        purchase_item:
+          attributes:
+            quantity:
+              greater_than_or_equal_to: Quantidade não pode ser menor que zero
+              quantity: Quantidade não é suficiente 
+        order_item:
+          attributes:
+            quantity:
+              greater_than_or_equal_to: Quantidade não pode ser menor que zero
     models:
       material:
         one: Material
